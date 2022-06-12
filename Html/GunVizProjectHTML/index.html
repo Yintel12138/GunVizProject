@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="static/picture/favicon.png">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bootstrap-icons.css">
+  <link href="static/css/all.min.css" rel="stylesheet">
+  <link href="static/css/fontawesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="static/css/lightbox.min.css">
+  <link rel="stylesheet" href="static/css/nice-select.css">
+  <link rel="stylesheet" href="static/css/jQuery-plugin-progressbar.css">
+  <link rel="stylesheet" href="static/css/barfiller.css">
+  <link rel="stylesheet" href="static/css/magnific-popup.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>U.S.A GUN VIOLENCE VIZ</title>
+  <script src="static/js/echarts/echarts.js"></script>
+
+</head>
+
+<body class="dark">
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+  <div class="preloader_area_wrap">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div class="main">
+    <!-- banner页 -->
+    <section class="hero-area">
+      <div class="swiper hero-slider">
+        <div class="swiper-slide">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="hero-content-wrapper">
+                  <div class="hero-content-wrap">
+                    <div class="hero-content-img"><img src="static/picture/banner-1.png" alt=""></div>
+                    <div class="hero-content">
+                      <h2>U.S.A 2014-2017</h2>
+                      <h1>GUN<span> VIOLENCE</span></h1>
+                      <!-- <h1>枪支<span> 暴力</span></h1> -->
+                      <h1><span>2014-2017年</span><br><br>美国枪支暴力事件<br>可视化分析</h1>
+                      <!-- <p>2014-2017年美国枪支暴力事件可视化分析</p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 感觉没有什么用,不过可以插入GITHUB链接 -->
+      <div class="social-media">
+        <ul class="social-list">
+          <li><a href="https://github.com/Yintel12138/GunVizProject">GitHub</a></li>
+          <li><a href="https://www.kaggle.com/datasets/jameslko/gun-violence-data">Data Source</a></li>
+          <li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=731459365">QQ(Contact Author)</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- 枪击暴力地图 -->
+    <section class="service-area sec-pad ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-3 col-xl-3">
+            <div class="title">
+              <span>
+                <h4>U.S.A GUN VIOLENCE MAP<br>美国枪支暴力地图</h4>
+              </span>
+              <p>
+                以月为单位，对原始数据中美国50个州的枪支暴力案件的数量进行统计，形成时空数据，将这些数据通过州的名称映射到美国地图中，根据每月发生的案件数量的多少，用不同的颜色表示，绘制出各个州的热力分布。同时，在图的右侧，会更具每月发生的案件数量排名，给出发生次数最多的10个州名称和数量。该图是动态变化的，在下方有一条时间轴，表示不同的月份，若未进行操作，将循环更新数据，按时间顺序滚动。若要查看某一特定月份的数据，可手动点击选取。
+              </p>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-9 col-xl-9">
+            <div id="map-hot" style="height: 500px;width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 折线图 -->
+  <section class="about-area sec-mar" style="background-color: #000000; margin: 0;padding-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 col-xl-3">
+          <div class="title">
+            <span>
+              <h4>枪支暴力事件数目时空分布折线图</h4>
+            </span>
+            <p>
+              该可视化图表与《枪支暴力事件时空动态分布热力地图》都是对以月为单位的美国50个州的枪支暴力案件的数量的时空数据进行可视化，但与之不同的是，本图是以折线图的形式，体现出各州枪支暴力案件数量随时间的变化趋势，更能看出数据按月变化的规律。尽管从整体上来看，折线的条数较多，交织在一起，但由于Echarts.js提供了鼠标移至某一折线上聚焦的功能，使得交互性大大提升。从图中可以看出，每年的七月是枪支暴力事件发生的高峰，究其原因，在于每年的7月4日是美国的独立日，此日枪击案发生的次数比其他事件更多。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-9 col-xl-9">
+          <div class="about-left dark">
+            <!-- 每个州案件随时间的变化 -->
+            <div id="time-line" style="height: 600px;width:100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-partner">
+    <div class="container-fluid g-0 overflow-hidden">
+      <div class="row align-items-center g-0">
+        <div class="col-12 col-xl-5">
+          <div class="row align-items-center">
+            <div id="top-n" style="height: 700px;width :100%;"></div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-2">
+          <div class="newsletter" style="background-image: url(''); height: 700px;">
+            <div class="subscribes">
+              <span>
+                <h3>States Of VIOLENCE</h3>
+              </span>
+              <p>左图为枪支暴力发生次数最多的20个州</p>
+              <p>右图为枪支暴力发生次数最少的20个州</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-5">
+          <div class="row align-items-center">
+            <div id="last-20" style="height: 700px;width :100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-area sec-mar" style="background-color: #000000; margin: 0;padding-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-5 col-xl-5">
+          <div class="title">
+            <span>
+              <h4>受害者与嫌疑犯性别分布柱状图</h4>
+            </span>
+            <p>
+              分别对枪支暴力事件中的受害者、嫌疑犯的性别进行统计，以柱状图的形式进行可视化，可以看到男性受害者的数量少于男性嫌疑人、女性嫌疑人的数量少于女性受害者，而无论是受害者还是嫌疑人，男性的数量都远大于女性。-2017年中最严重的枪支暴力事件。共有103人伤亡，其中53人丧生，另外50人受伤。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-1 col-xl-1"></div>
+        <div class="col-lg-6 col-xl-6">
+          <div class="about-left dark">
+            <div id="gender-column" style="height: 300px;width:100%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-xl-8">
+          <div class="about-right">
+            <!-- 使用的枪支情况统计 -->
+            <div id='column-graph' style="height: 500px;width:100%;"></div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4 col-xl-4">
+          <div class="title" style="margin-top: 40px;">
+            <span>
+              <h4>事件中使用最多的枪支</h4>
+            </span>
+            <p>
+              在枪支暴力事件中，使用最多的枪支是手枪，高达23465次。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 玫瑰图 -->
+  <section class="about-area sec-mar" style=" margin: 0;padding-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 col-xl-3">
+          <div class="title">
+            <span>
+              <h4>伤亡人数前10的事件玫瑰图</h4>
+            </span>
+            <p>
+              按照伤亡人数对各个事件进行排序，得到了伤亡人数位于前10个的枪支暴力事件，及对应的伤亡人数。用南丁格尔玫瑰图进行可视化，可以看到，发生在2016年的奥兰多枪击事件，是2014年-2017年中最严重的枪支暴力事件。共有103人伤亡，其中53人丧生，另外50人受伤。
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-9 col-xl-9">
+          <div id='death-top10' style="height: 600px;width:100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 发生场所的词云图 -->
+  <section class="our-partner">
+    <div class="container-fluid g-0 overflow-hidden">
+      <div class="row align-items-center g-0">
+        <div class="col-12 col-xl-4">
+          <div class="newsletter" style="background-image: url('');height: 600px;">
+            <div class="subscribes"><span></span>
+              <h1>Location Of VIOLENCE</h1>
+              <h2></h2>
+              <p>右图为枪支暴力事件通常发生的场所的词云图</p>
+              <p>枪击事件多发在<span>公寓、公园、高校、机场、加油站等</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-8">
+          <div class="row align-items-center"
+            style="background-image: url('static/picture/wordcloud.png');background-size: 100% 100%;height: 600px;background-color: #000000;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 年龄 -->
+  <section class="about-area sec-mar" style="margin: 0;padding-top: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+          <div class="title">
+            <span>
+              <h4>受害者与嫌疑犯年龄分布柱状折线图</h4>
+            </span>
+            <p>
+              分别对枪支暴力事件中的受害者、嫌疑犯的年龄进行统计，以柱状图和折线图混合的形式进行可视化。从图中可以看到，受害者和嫌疑犯的年龄分布大致相同，大部分受害者和嫌疑犯都集中在18岁-30岁。图中标注了最大值，可以发现，年龄为20岁的受害者与嫌疑犯都是最多的。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-12 col-xl-12">
+          <div class="about-right">
+            <div id='age-column' style="height: 700px;width:100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 遇难者数据展示 -->
+  <!-- <div class="features-count">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="single-count"><i><img src="static/picture/count-1.png" alt=""></i>
+          <div class="counter"><span class="odometer">150</span><sup>+</sup></div>
+          <p>累计死亡人数</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="single-count"><i><img src="static/picture/count-2.png" alt=""></i>
+          <div class="counter"><span class="odometer">250</span><sup>+</sup></div>
+          <p>累计受伤人数</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="single-count"><i><img src="static/picture/count-3.png" alt=""></i>
+          <div class="counter"><span class="odometer">150</span><sup>+</sup></div>
+          <p>暴力事件总数</p>
+        </div>
+      </div>
+    </div> -->
+
+
+
+  <!-- 重大枪支暴力事件 -->
+  <div class="portfolio-area sec-mar-top"
+    style="background-color: #000000; margin: 0;padding-top: 100px;padding-bottom: 100px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-7 col-xl-5">
+          <div class="title"><span>
+              <h4>Gun Violence Case</h4>
+            </span>
+            <h2>重大枪支暴力事件</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper portfolio-slider">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="single-portfolio">
+            <div class="portfolio-data"><a href="#"><img src="static/picture/6.12pULSE.png" alt=""
+                  style="height:500px ;width:370px; object-fit: cover ;"></a></div>
+            <div class="portfolio-inner">
+              <h4>6·12奥兰多枪击案</h4>
+              <p><br>该枪击案发生在2016年6月12日佛罗里达州奥兰多一家名为“脉搏”（Pulse）的同志酒吧，共造成49人死亡，44受伤。</p>
+              <div class="portfolio-hover">
+                <a href="https://baike.baidu.com/item/6%C2%B712%E7%BE%8E%E5%9B%BD%E5%A5%A5%E5%85%B0%E5%A4%9A%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6/19733835?fr=aladdin" class="case-btn">了解更多</a>
+                <a data-lightbox="image1" href="static/picture/portfolio-1.jpg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="single-portfolio">
+            <div class="portfolio-data"><a href="#"><img src="static/picture/5.14NewYork.jpg" alt=""
+                  style="height:500px ;width:370px; object-fit: cover ;"></a></div>
+            <div class="portfolio-inner">
+              <h4>5.14纽约超市枪击案</h4>
+              <p><br>该枪击案发生在2022年5月14日美国纽约州的一家超市，共造成10人死亡，3人受伤。</p>
+              <div class="portfolio-hover">
+                <a href="project-details.html" class="case-btn">了解更多</a>
+                <a data-lightbox="image1" href="https://www.gunviolencearchive.org/incident/2301751"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="single-portfolio">
+            <div class="portfolio-data"><a href="#"><img src="static/picture/5.22Robo.png" alt=""
+                  style="height:500px ;width:370px; object-fit: cover ;"></a></div>
+            <div class="portfolio-inner">
+              <h4>5.22罗伯小学枪击案</h4>
+              <p><br>该枪击案发生在2022年5月22日美国德克萨斯州的罗伯小学，共造成18名儿童死亡，3名成年人死亡。</p>
+              <div class="portfolio-hover">
+                <a href="https://www.gunviolencearchive.org/incident/2310278" class="case-btn">了解更多</a>
+                <a data-lightbox="image1" href="static/picture/portfolio-1.jpg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="single-portfolio">
+            <div class="portfolio-data"><a href="#"><img src="static/picture/11.5Texas.jpeg" alt=""
+                  style="height:500px ;width:370px; object-fit: cover ;"></a></div>
+            <div class="portfolio-inner">
+              <h4>11.5得州教堂枪击案</h4>
+              <p><br>该枪击案发生在2017年11月5日得克萨斯州威尔森县萨瑟兰普林斯市一间教堂内，凶手向祈祷的人们开枪，造成27人死亡，25人受伤。</p>
+              <div class="portfolio-hover">
+                <a href="https://www.gunviolencearchive.org/incident/217151" class="case-btn">了解更多</a>
+                <a data-lightbox="image1" href="static/picture/portfolio-1.jpg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="single-portfolio">
+            <div class="portfolio-data"><a href="#"><img src="static/picture/12.2Cali.jpg" alt=""
+                  style="height:500px ;width:370px; object-fit: cover ;"></a></div>
+            <div class="portfolio-inner">
+              <h4>12·2美国加州枪击</h4>
+              <p><br>该枪击案发生在2015年12月2日美国加利福尼亚州南部城市圣贝纳迪诺，造成14人遇难，25人受伤。</p>
+              <div class="portfolio-hover">
+                <a href="https://baike.baidu.com/item/12%C2%B72%E7%BE%8E%E5%9B%BD%E5%8A%A0%E5%B7%9E%E6%9E%AA%E5%87%BB%E4%BA%8B%E4%BB%B6/18903161?fr=aladdin" class="case-btn">了解更多</a>
+                <a data-lightbox="image1" href="static/picture/portfolio-1.jpg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- 关于作者 -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-lg-4 col-xl-4">
+          <div class="footer-widget">
+            <address>
+              <h4>Author</h4>
+              <p><b>尹恒</b> 西南交通大学计算机与人工智能学院</p>
+              <p>人工智能专业</p>
+              <p>《大数据可视化》课程设计</p>
+            </address>
+          </div>
+        </div>
+        <div class="col-md-5 col-lg-5 col-xl-5"></div>
+
+        <div class="col-md-3 col-lg-3 col-xl-3">
+          <div class="footer-widget">
+            <h4>Contacts</h4>
+            <div class="office-mail">
+              <div class="mail-icon"><i class="far fa-envelope"></i></div>
+              <div class="email"><a href="mailto:myideame@outlook.com">myideame@outlook.com</a></div>
+            </div>
+            <div class="address">
+              <div class="address-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <p>成都市西南交通大学犀浦校区</p>
+            </div>
+            <ul class="social-media-icons">
+              <li><a href="https://www.kaggle.com/datasets/jameslko/gun-violence-data"><i class="fab fa-kaggle"></i></a>
+              </li>
+              <li><a href="https://github.com/Yintel12138/GunVizProject"><i class="fab fa-github"></i></a></li>
+              <li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=731459365"><i
+                    class="fab fa-qq"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 col-lg-4 col-xl-5">
+            <div class="copy-txt"><span>Copyright 2022 <b>Yintel</b><br>Design By <a href="/">bootstrap</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <div class="scroll-top"><span>Top<i class="bi bi-arrow-up"></i></span></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jquery-3.6.0.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jquery.nice-select.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jQuery-plugin-progressbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jquery.barfiller.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jquery.counterup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/jquery.magnific-popup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/masonry.pkgd.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/map-hot.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/time-line.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/tree.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/top-n.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/column-graph.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/death-top10.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/gender-column.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/age-column.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/YIntel12138/jscdn@master/js/echarts/last-20.js"></script>
+</body>
+
+</html>
